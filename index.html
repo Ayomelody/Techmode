@@ -1,90 +1,126 @@
-/* ===========================
-   DARK MODE STYLES
-   =========================== */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Techmode — Your Daily Tech Blog</title>
+  <meta name="description" content="Techmode brings you the latest updates, news, and insights on technology, AI, and innovations." />
 
-/* Body Background */
-body.dark {
-  background: #121212;
-  color: #ddd;
-}
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/favicon.png" />
 
-/* Header */
-body.dark .site-header {
-  background: #1e1e1e;
-  border-bottom: 1px solid #333;
-}
+  <!-- Open Graph -->
+  <meta property="og:title" content="Techmode — Your Daily Tech Blog" />
+  <meta property="og:description" content="Latest updates and insights on technology, AI, and innovations." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/images/logo.png" />
 
-body.dark .site-header a {
-  color: #ddd;
-}
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- =========================
+       HEADER
+  ========================== -->
+  <header class="site-header container">
+    <a class="brand" href="index.html">
+      <img src="assets/images/logo.png" alt="Techmode logo" />
+      <span>Techmode</span>
+    </a>
+    <button id="themeToggle">🌙 Dark Mode</button>
+  </header>
 
-body.dark .site-header a:hover {
-  color: #fff;
-}
+  <!-- =========================
+       HERO / INTRO
+  ========================== -->
+  <section class="hero container">
+    <h1>Welcome to Techmode</h1>
+    <p>Your trusted blog for daily tech news, insights, and updates.</p>
+  </section>
 
-/* Navigation Button */
-body.dark #themeToggle {
-  background: #333;
-  color: #ddd;
-  border: 1px solid #444;
-}
-
-body.dark #themeToggle:hover {
-  background: #444;
-  color: #fff;
-}
-
-/* Footer */
-body.dark .site-footer {
-  background: #1e1e1e;
-  border-top: 1px solid #333;
-}
-
-body.dark .site-footer h4,
-body.dark .site-footer p,
-body.dark .site-footer a,
-body.dark .fineprint {
-  color: #ccc;
-}
-
-body.dark .site-footer a:hover {
-  color: #fff;
-}
-
-/* Articles Grid Cards */
-body.dark .article-grid article {
-  background: #1e1e1e;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
-}
-
-body.dark .article-grid h3,
-body.dark .article-grid p {
-  color: #ddd;
-}
-
-/* Individual Article Page */
-body.dark .article-header h1,
-body.dark .article-header .meta,
-body.dark .article .prose p {
-  color: #ddd;
-}    </div>
-    <div>
-      <h4>Navigate</h4>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="articles/article-1.html">Articles</a></li>
-      </ul>
+  <!-- =========================
+       ARTICLES GRID
+  ========================== -->
+  <section class="articles container">
+    <h2>Latest Articles</h2>
+    <div class="article-grid">
+      <article>
+        <a href="articles/article-1.html">
+          <img src="assets/images/article-1.png" alt="AI in 2025" />
+          <h3>AI in 2025: How It’s Changing Work</h3>
+          <p>AI is reshaping productivity, jobs, and industries. Here’s what actually matters right now...</p>
+        </a>
+      </article>
+      <article>
+        <a href="articles/article-2.html">
+          <img src="assets/images/article-2.png" alt="Tech Gadgets 2025" />
+          <h3>Top 5 Gadgets of 2025</h3>
+          <p>From smart glasses to personal AI, here are the hottest gadgets redefining the year...</p>
+        </a>
+      </article>
+      <article>
+        <a href="articles/article-3.html">
+          <img src="assets/images/article-3.png" alt="Cybersecurity" />
+          <h3>Cybersecurity in 2025</h3>
+          <p>With threats evolving, here’s how businesses and individuals can stay safe online...</p>
+        </a>
+      </article>
+      <article>
+        <a href="articles/article-4.html">
+          <img src="assets/images/article-4.png" alt="Green Tech" />
+          <h3>Green Tech Innovations</h3>
+          <p>How technology is driving sustainability and eco-friendly solutions worldwide...</p>
+        </a>
+      </article>
     </div>
-    <div>
-      <h4>Contact</h4>
-      <ul>
-        <li><a href="mailto:Techmode00@gmail.com">Techmode00@gmail.com</a></li>
-      </ul>
-    </div>
-  </div>
-  <p class="fineprint">© 2025 Techmode. Built with HTML, CSS & JS.</p>
-</footer>
+  </section>
 
+  <!-- =========================
+       FOOTER
+  ========================== -->
+  <footer class="site-footer container">
+    <div class="footer-grid">
+      <div>
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="articles/article-1.html">Articles</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:Techmode00@gmail.com">Techmode00@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="fineprint">© 2025 Techmode. Built with HTML, CSS & JS.</p>
+  </footer>
+
+  <!-- =========================
+       DARK MODE SCRIPT
+  ========================== -->
+  <script>
+    const toggleBtn = document.getElementById("themeToggle");
+    const body = document.body;
+
+    // Load saved theme
+    if (localStorage.getItem("theme") === "dark") {
+      body.classList.add("dark");
+      toggleBtn.textContent = "☀️ Light Mode";
+    }
+
+    toggleBtn.addEventListener("click", () => {
+      body.classList.toggle("dark");
+      if (body.classList.contains("dark")) {
+        toggleBtn.textContent = "☀️ Light Mode";
+        localStorage.setItem("theme", "dark");
+      } else {
+        toggleBtn.textContent = "🌙 Dark Mode";
+        localStorage.setItem("theme", "light");
+      }
+    });
+  </script>
 </body>
-</html>
+   </html>
