@@ -1,6 +1,6 @@
 /* ===========================
-   GLOBAL STYLES
-   =========================== */
+   RESET & BASE STYLES
+=========================== */
 * {
   margin: 0;
   padding: 0;
@@ -8,110 +8,235 @@
 }
 
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  background: #ffffff;
-  color: #222;
+  font-family: system-ui, sans-serif;
   line-height: 1.6;
+  background: #f9f9f9;
+  color: #333;
+  transition: background 0.3s, color 0.3s;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  border-radius: 8px;
 }
 
 a {
+  color: #0077cc;
   text-decoration: none;
-  color: #0073e6;
-  transition: color 0.3s ease;
+  transition: color 0.3s;
 }
 
 a:hover {
-  color: #005bb5;
+  color: #005fa3;
 }
 
 .container {
   width: 90%;
   max-width: 1100px;
-  margin: auto;
+  margin: 0 auto;
+  padding: 1.5rem 0;
 }
 
 /* ===========================
    HEADER
-   =========================== */
+=========================== */
 .site-header {
-  background: #ffffff;
-  border-bottom: 1px solid #ddd;
-  padding: 1rem 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid #ddd;
+  background: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .site-header .brand {
   display: flex;
   align-items: center;
-  font-weight: bold;
   font-size: 1.2rem;
-  color: #222;
+  font-weight: bold;
+  color: #333;
 }
 
 .site-header .brand img {
-  height: 40px;
+  width: 40px;
   margin-right: 10px;
 }
 
-.site-header .nav a {
-  margin: 0 0.75rem;
-  font-weight: 500;
-  color: #222;
-}
-
-.site-header .nav a:hover {
-  color: #0073e6;
-}
-
 #themeToggle {
-  background: #f1f1f1;
+  padding: 0.5rem 1rem;
   border: 1px solid #ccc;
-  padding: 0.4rem 0.7rem;
-  border-radius: 5px;
+  background: #f4f4f4;
+  border-radius: 6px;
   cursor: pointer;
-  font-size: 1rem;
   transition: background 0.3s, color 0.3s;
 }
 
 #themeToggle:hover {
-  background: #ddd;
+  background: #e0e0e0;
+}
+
+/* ===========================
+   HERO
+=========================== */
+.hero {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+/* ===========================
+   ARTICLES GRID
+=========================== */
+.articles h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.article-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.article-grid article {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.article-grid article:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+}
+
+.article-grid h3 {
+  margin: 0.8rem 0;
+  font-size: 1.25rem;
+  color: #222;
+}
+
+.article-grid p {
+  font-size: 0.95rem;
+  color: #555;
 }
 
 /* ===========================
    FOOTER
-   =========================== */
+=========================== */
 .site-footer {
-  background: #f9f9f9;
   border-top: 1px solid #ddd;
-  padding: 2rem 1rem;
+  padding: 2rem 0;
+  background: #fafafa;
   margin-top: 2rem;
 }
 
-.site-footer .cols {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 1rem;
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
 }
 
 .site-footer h4 {
+  font-size: 1.1rem;
   margin-bottom: 0.5rem;
-  color: #222;
 }
 
-.site-footer p,
-.site-footer a,
+.site-footer ul {
+  list-style: none;
+}
+
 .site-footer li {
-  color: #444;
-  font-size: 0.95rem;
+  margin-bottom: 0.4rem;
+}
+
+.site-footer a {
+  color: #555;
 }
 
 .site-footer a:hover {
-  color: #0073e6;
+  color: #000;
 }
 
+.fineprint {
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 1.5rem;
+  color: #777;
+}
+
+/* ===========================
+   DARK MODE STYLES
+=========================== */
+body.dark {
+  background: #121212;
+  color: #ddd;
+}
+
+body.dark .site-header {
+  background: #1e1e1e;
+  border-bottom: 1px solid #333;
+}
+
+body.dark .site-header a {
+  color: #ddd;
+}
+
+body.dark .site-header a:hover {
+  color: #fff;
+}
+
+body.dark #themeToggle {
+  background: #333;
+  color: #ddd;
+  border: 1px solid #444;
+}
+
+body.dark #themeToggle:hover {
+  background: #444;
+  color: #fff;
+}
+
+body.dark .site-footer {
+  background: #1e1e1e;
+  border-top: 1px solid #333;
+}
+
+body.dark .site-footer h4,
+body.dark .site-footer p,
+body.dark .site-footer a,
+body.dark .fineprint {
+  color: #ccc;
+}
+
+body.dark .site-footer a:hover {
+  color: #fff;
+}
+
+body.dark .article-grid article {
+  background: #1e1e1e;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+body.dark .article-grid h3,
+body.dark .article-grid p {
+  color: #ddd;
+}
 .fineprint {
   text-align: center;
   font-size: 0.8rem;
