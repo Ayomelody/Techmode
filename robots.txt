@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ayomelody.github.io/Techmode/sitemap.xml
